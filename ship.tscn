@@ -16,3 +16,5 @@ texture = ExtResource("1_ewi2q")
 
 [node name="CollisionShapeShip" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_0ss4g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
