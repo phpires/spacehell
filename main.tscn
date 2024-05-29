@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dty4swyik20u8"]
+
+[ext_resource type="PackedScene" uid="uid://d3albi0hmpvhh" path="res://ship.tscn" id="1_84hkn"]
+
+[node name="Main" type="Node"]
+
+[node name="Ship" parent="." instance=ExtResource("1_84hkn")]
+
+[node name="AlienTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 450)
