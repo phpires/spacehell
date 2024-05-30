@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 650
+@export var speed = 450
 var screen_size
 signal hit
 
