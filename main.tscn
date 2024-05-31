@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dty4swyik20u8"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_5ym1l"]
+[ext_resource type="PackedScene" uid="uid://d3albi0hmpvhh" path="res://ship.tscn" id="1_84hkn"]
+[ext_resource type="PackedScene" uid="uid://dcb7sq80d7j6v" path="res://alien.tscn" id="2_20hts"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_5ym1l")
+alien_scene = ExtResource("2_20hts")
+
+[node name="Ship" parent="." instance=ExtResource("1_84hkn")]
+
+[node name="AlienTimer" type="Timer" parent="."]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[connection signal="hit" from="Ship" to="." method="_on_ship_hit"]
+[connection signal="timeout" from="AlienTimer" to="." method="_on_alien_timer_timeout"]
