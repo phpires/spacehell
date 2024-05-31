@@ -31,8 +31,8 @@ func _process(delta):
 
 func _on_body_entered(body):
 	hit.emit()
-	$CollisionShapeShip.set_deferred("disable", true)
+	#$CollisionShapeShip.set_deferred("disable", true)
 
 func start(pos : Vector2):
 	position = pos
-	$CollisionShapeShip.disabled = false
+	#$CollisionShapeShip.disabled = false
