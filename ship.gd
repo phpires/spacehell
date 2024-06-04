@@ -8,6 +8,7 @@ signal hit
 func _ready():
 	screen_size = get_viewport_rect().size
 	start(Vector2(screen_size/2))
+	$Bullet
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
