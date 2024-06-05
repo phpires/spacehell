@@ -18,3 +18,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 func generate_position():
 	var x =  rng.randi_range(0, screen_size.x)
 	return Vector2(x,0)
+
+func explode():
+	alien_speed = 0
+	queue_free()
