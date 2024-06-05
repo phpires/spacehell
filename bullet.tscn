@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0ohcq2sjld2"]
+[gd_scene load_steps=3 format=3 uid="uid://ds2hx6vg6rxim"]
 
-[ext_resource type="Texture2D" uid="uid://biv1angufnrei" path="res://assets/ship-bullet.png" id="1_k6bn7"]
-[ext_resource type="Script" path="res://bullet.gd" id="1_ntn0e"]
+[ext_resource type="Texture2D" uid="uid://dmhgyfbr1wshh" path="res://assets/huge-bullet.png" id="1_rl82c"]
 
-[node name="Bullet" type="Node2D"]
-script = ExtResource("1_ntn0e")
-bullet_speed = null
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tvmv"]
+height = 22.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_k6bn7")
+[node name="Bullet" type="Area2D"]
+
+[node name="BulletSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(0.25, 0.24375)
+texture = ExtResource("1_rl82c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5tvmv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

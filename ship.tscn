@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3albi0hmpvhh"]
+[gd_scene load_steps=4 format=3 uid="uid://d3albi0hmpvhh"]
 
 [ext_resource type="Script" path="res://ship.gd" id="1_47qgr"]
 [ext_resource type="Texture2D" uid="uid://bi6xk6yrp5w1i" path="res://assets/ship-pixel.png" id="1_ewi2q"]
-[ext_resource type="PackedScene" uid="uid://b0ohcq2sjld2" path="res://bullet.tscn" id="3_oyga3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ss4g"]
 radius = 36.0
@@ -20,7 +19,5 @@ texture = ExtResource("1_ewi2q")
 [node name="CollisionShapeShip" type="CollisionShape2D" parent="."]
 position = Vector2(0, 56)
 shape = SubResource("CapsuleShape2D_0ss4g")
-
-[node name="Bullet" parent="." instance=ExtResource("3_oyga3")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

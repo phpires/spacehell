@@ -22,8 +22,6 @@ func _process(delta):
 		velocity.y += 1
 	if (Input.is_action_pressed("move_up")):
 		velocity.y -= 1
-	if (Input.is_action_pressed("shoot")):
-		print("SHOOT THA THING")
 	
 	if (velocity.length()):
 		velocity = velocity.normalized()*speed
