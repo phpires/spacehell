@@ -4,7 +4,7 @@ extends Area2D
 @export var bullet_cooldown = 0.13
 @export var bullet_scene: PackedScene
 @onready var screen_size = get_viewport_rect().size
-
+@onready var animation_player = $AnimationPlayer
 signal hit
 
 var Y_OFFSET = 100
@@ -22,6 +22,14 @@ func _process(delta):
 	var input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	position += input*speed*delta
 	position = position.clamp(Vector2(16,16), screen_size - Vector2(16,16))
+	if (Input.is_action_just_pressed("move_left")):
+		animation_player.play("move_left")
+	if (Input.is_action_just_released("move_left")):
+		animation_player.play("move_left_reversed")
+	if (Input.is_action_just_pressed("move_right")):
+		animation_player.play("move_right")
+	if (Input.is_action_just_released("move_right")):
+		animation_player.play("move_right_reversed")
 	if (Input.is_action_pressed("shoot")):
 		shoot()
 

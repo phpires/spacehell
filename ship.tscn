@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3albi0hmpvhh"]
+[gd_scene load_steps=11 format=3 uid="uid://d3albi0hmpvhh"]
 
 [ext_resource type="Script" path="res://ship.gd" id="1_47qgr"]
 [ext_resource type="PackedScene" uid="uid://ds2hx6vg6rxim" path="res://bullet.tscn" id="2_lw0yf"]
@@ -9,6 +9,21 @@ height = 32.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8l006"]
 load_path = "res://.godot/imported/red-spaceship.png-090ecab8fc82a31c26d2b677edaba9c3.ctex"
+
+[sub_resource type="Animation" id="Animation_q385d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_h007p"]
 resource_name = "move_left"
@@ -24,21 +39,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_q385d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_f8v0q"]
@@ -57,11 +57,45 @@ tracks/0/keys = {
 "values": [2, 1, 0, 0]
 }
 
+[sub_resource type="Animation" id="Animation_8t7ay"]
+resource_name = "move_right"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_sl55m"]
+resource_name = "move_right_reversed"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 7, 6, 5]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dd08h"]
 _data = {
 "RESET": SubResource("Animation_q385d"),
 "move_left": SubResource("Animation_h007p"),
-"move_left_reversed": SubResource("Animation_f8v0q")
+"move_left_reversed": SubResource("Animation_f8v0q"),
+"move_right": SubResource("Animation_8t7ay"),
+"move_right_reversed": SubResource("Animation_sl55m")
 }
 
 [node name="Ship" type="Area2D"]
