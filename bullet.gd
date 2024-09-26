@@ -17,7 +17,6 @@ func start(pos):
 	position = pos
 
 func _on_area_entered(area):
-	print("Bullet hitted area: " + area)
 	if area.is_in_group("enemies"):
 		area.explode()
 		queue_free()
